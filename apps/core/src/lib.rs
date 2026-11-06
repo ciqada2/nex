@@ -29,7 +29,10 @@ pub mod logging;
 #[cfg(target_os = "windows")]
 pub(crate) mod media;
 #[cfg(target_os = "windows")]
+pub(crate) mod mft_channel;
+#[cfg(target_os = "windows")]
 pub(crate) mod mft_discovery;
+pub(crate) mod mft_protocol;
 pub mod model;
 #[cfg(target_os = "windows")]
 pub(crate) mod overlay;

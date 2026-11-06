@@ -123,6 +123,9 @@ fn run_index_cycle(
     indexing: &AtomicBool,
     stdio_enabled: bool,
 ) -> Option<IndexRefreshReport> {
+    // Before the service lock and the indexing flag: a late-starting elevated
+    // helper must not stall IPC reads or watcher writes while we wait for it.
+    nex_core::discovery::defer_until_helper_ready();
     indexing.store(true, Ordering::Release);
     ipc::notify_sync_waiters();
     // Low CPU *and* I/O priority for the scan/sync: the UI keeps the desktop
