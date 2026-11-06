@@ -1636,7 +1636,6 @@ dependencies = [
  "image",
  "json5",
  "lru 0.12.5",
- "once_cell",
  "png",
  "rusqlite",
  "serde",
