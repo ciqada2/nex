@@ -9,6 +9,7 @@ pub mod clipboard_history;
 #[cfg(target_os = "windows")]
 pub(crate) mod codex_auth;
 pub mod config;
+pub mod config_watch;
 #[cfg(target_os = "windows")]
 pub(crate) mod console_signal;
 pub mod contract;
